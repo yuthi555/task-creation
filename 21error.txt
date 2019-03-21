@@ -1,0 +1,27 @@
+ERROR! vars file Server_Inventory_hosts.yml was not found on the Ansible Controller.
+If you are using a module and expect the file to exist on the remote, see the remote_src option
+
+
+ERROR! vars file Server_Inventory_hosts.yml was not found on the Ansible Controller.
+If you are using a module and expect the file to exist on the remote, see the remote_src option
+
+
+
+- Requested_By: ''
+    Environment: '.Devon Samrah'
+    Category: 'Server Infrastructure'
+    CI: 'CH3QR016633'
+    Patching_Type: 'Normal'
+    Assignment_Group: 'Server Support'
+    Assigned_To: 'Raju'
+    Change_Coordinator: '.Bart Hachey'
+    Short_Description: 'QA_UAT_1 |Linux Patching'
+    Description: 'QA_UAT_1 |Linux Patching'
+    Planning_Start_date: '04/02/19 09:00'
+    Planning_End_date: '04/03/19 05:00'
+    Implemention_Plan: 'PFA'
+    BackoutPlan: 'PFA'
+    ValidationPlan: 'PFA'
+    Technical_Approver: '.Bart Hachey'
+    Director_Approver: ''
+    Sr_Director_Approver: ''
