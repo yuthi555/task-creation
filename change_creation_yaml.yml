@@ -1,0 +1,38 @@
+---
+- gather_facts: false
+  hosts: localhost
+  vars_files:
+    - Server_Inventory_hosts.yml
+  tasks:
+  - name: Create a ticket in SNOW updated
+    register: new_change_request
+    snow_record:
+      data:
+        requested_by: "{{item.Requested_By}}"
+        u_environment: "{{item.Environment}}"
+        category: "{{item.Category}}"
+        cmdb_ci: "{{item.CI}}"
+        type: "{{item.Patching_Type}}"
+        assignment_group: "{{item.Assignment_Group}}"
+        assigned_to: "{{item.Assigned_To}}"
+        u_change_coordinator: "{{item.Change_Coordinator}}"
+        short_description: "{{item.Short_Description}}"
+        description: "{{item.Description}}"
+        start_date: "{{item.Planning_Start_date}}"
+        end_date: "{{item.Planning_End_date}}"
+        implementation_plan: "{{item.Implemention_Plan}}"
+        backout_plan: "{{item.BackoutPlan}}"
+        test_plan: "{{item.ValidationPlan}}"
+        u_technical_approver: "{{item.Technical_Approver}}"
+        u_director_approval: "{{item.Director_Approver}}"
+        u_sr_director_approval: "{{item.Sr_Director_Approver}}"
+        type: Normal
+      instance: dev54182
+      password: 009@Shreya
+      state: present
+      table: change_request
+      username: admin
+    with_items:
+        - "{{ serverinventory }}"
+#    register: new_change_request
+#- debug: var=new_change_request.record.number

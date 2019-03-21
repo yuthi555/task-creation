@@ -1,0 +1,18 @@
+---
+serverinventory:
+  - configuration_item: 'Action Tracker'
+    environment: '.Bart Hachey'
+    assignment_group: 'CAB Approval'
+    assigned_To: 'Luke Wilson'
+    change_coordinator: 'JP'
+    start_date: '01/02/19 09:00'
+    end_date: '01/02/19 09:00'
+    short_description: 'Development  |Linux Patching'
+    description: 'Development  |Linux Patching'
+    implementation_plan: 'pfa'
+    backout_plan: 'PFA'
+    test_plan: 'pfa'
+    Technical_Approver: 'JP'
+    Director_Approver: 'Bart Hachey'
+    Sr_Director_Approver: 'Devon Samrah'
+ 
