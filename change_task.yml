@@ -7,21 +7,25 @@
     state: present
     table: change_request
     data:
-      cmdb_ci: "{{item.configuration_item}}"
-      u_environment: "{{item.environment}}"
-      assignment_group: "{{item.assignment_group}}"
-      assigned_to: "{{item.assigned_to}}"
-      u_change_coordinator: "{{item.change_coordinator}}"
-      start_date: "{{item.start_date}}"
-      end_date: "{{item.end_date}}"
-      short_description: "{{item.short_description}}"
-      description: "{{item.description}}"
-      implementation_plan: "{{item.implementation_plan}}"
-      backout_plan: "{{item.backout_plan}}"
-      test_plan: "{{item.test_plan}}"
+      requested_by: "{{item.Requested_By}}"
+      u_environment: "{{item.Environment}}"
+      category: "{{item.Category}}"
+      cmdb_ci: "{{item.CI}}"
+      type: "{{item.Patching_Type}}"
+      assignment_group: "{{item.Assignment_Group}}"
+      assigned_to: "{{item.Assigned_To}}"
+      u_change_coordinator: "{{item.Change_Coordinator}}"
+      short_description: "{{item.Short_Description}}"
+      description: "{{item.Description}}"
+      start_date: "{{item.Planning_Start_date}}"
+      end_date: "{{item.Planning_End_date}}"
+      implementation_plan: "{{item.Implemention_Plan}}"
+      backout_plan: "{{item.BackoutPlan}}"
+      test_plan: "{{item.ValidationPlan}}"
       u_technical_approver: "{{item.Technical_Approver}}"
       u_director_approval: "{{item.Director_Approver}}"
       u_sr_director_approval: "{{item.Sr_Director_Approver}}"
+      type: Normal
   register: new_change
 - debug:
     msg: "New change has been created : {{ new_change.record.number }} "
