@@ -28,7 +28,7 @@
 - name: Change creation process begins
   hosts: localhost
   vars_files:
-    - Server_Inventory_hosts.yml
+    - x.yml
   tasks:
     - include_tasks: change_task.yml
       with_items:
