@@ -1,0 +1,46 @@
+---
+- name: Create a ticket
+  snow_record:
+    username: admin
+    password: Ctss-2019
+    instance: dev54625
+    state: present
+    table: change_request
+    data:
+      requested_by: "{{item.Requested_By}}"
+      u_environment: "{{item.Environment}}"
+      category: "{{item.Category}}"
+      cmdb_ci: "{{item.CI}}"
+      type: "{{item.Patching_Type}}"
+      assignment_group: "{{item.Assignment_Group}}"
+      assigned_to: "{{item.Assigned_To}}"
+      u_change_coordinator: "{{item.Change_Coordinator}}"
+      short_description: "{{item.Short_Description}}"
+      description: "{{item.Description}}"
+      start_date: "{{item.Planning_Start_date}}"
+      end_date: "{{item.Planning_End_date}}"
+      implementation_plan: "{{item.Implemention_Plan}}"
+      backout_plan: "{{item.BackoutPlan}}"
+      test_plan: "{{item.ValidationPlan}}"
+      u_technical_approver: "{{item.Technical_Approver}}"
+      u_director_approval: "{{item.Director_Approver}}"
+      u_sr_director_approval: "{{item.Sr_Director_Approver}}"
+      type: Normal
+  register: new_change
+- debug:
+    msg: "New change has been created : {{ new_change.record.number }} "
+- name: test change
+  snow_record:
+    username: admin
+    password: Ctss-2019
+    instance: dev54625
+    state: present
+    table: change_task
+    data:
+      short_description: "Sample Task Creation for Change {{ new_change.record.number }}"
+      description: 'Nishant 2021| NON PROD Q3 Linux Patching QA'
+      change_request: "{{ new_change.record.number }}"
+  register: change_task
+- debug:
+    msg: "New change has been created : {{ change_task.record.number }} "  
+  
